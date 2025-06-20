@@ -1,0 +1,11 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body {
+  @apply bg-brand-blue text-brand-gold transition-colors duration-300;
+}
+
+.dark body {
+  @apply bg-brand-dark text-brand-gold;
+}
