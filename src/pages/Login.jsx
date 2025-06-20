@@ -2,6 +2,8 @@ import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
 import { apiFetch } from "../services/api";
 import { useAuth } from "../contexts/AuthContext";
+import { Link } from "react-router-dom"; // ⬅️ Add this import at the top
+
 
 export default function Login() {
   const [form, setForm] = useState({ email: "", password: "" });
@@ -73,9 +75,9 @@ export default function Login() {
         </form>
         <div className="mt-4 text-center text-yellow-200 text-sm">
           Don't have an account?{" "}
-          <a href="/register" className="underline hover:text-yellow-300">
-            Register
-          </a>
+          <Link to="/register" className="underline hover:text-yellow-300">
+  Register
+</Link>
         </div>
       </div>
       <style>{`
