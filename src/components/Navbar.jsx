@@ -3,7 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
 
 // Support contact
-const SUPPORT_EMAIL = import.meta.env.VITE_SUPPORT_EMAIL || "support@example.com";
+const SUPPORT_EMAIL = "venombar122@gmail.com";
 // Telegram support
 const CHAT_URL = "https://t.me/smallshark111";
 
@@ -13,7 +13,7 @@ const ADMIN_EMAIL = "venombar122@gmail.com";
 const LOGO_PALETTE = {
   gradientStart: "#cf9819", 
   gradientEnd:   "#e0bd3f", 
-  text:          "#000000",  // white
+  text:          "#000000",  // text color inside logo
   shadowColor:   "#000000",  // for inner shadow
   shadowOpacity: 0.2
 };
@@ -52,7 +52,7 @@ function TetherLogo({ className = "h-8 w-8" }) {
         filter="url(#inner-shadow)"
       />
 
-      {/* Centered “T2I” in white (or whatever you set in LOGO_PALETTE.text) */}
+      {/* Centered “T2I” in custom text color */}
       <text
         x="50%"
         y="53%"
@@ -68,7 +68,6 @@ function TetherLogo({ className = "h-8 w-8" }) {
     </svg>
   );
 }
-
 
 function DashboardIcon({ className = "h-6 w-6 text-yellow-200" }) {
   return (
@@ -95,7 +94,6 @@ export default function Navbar() {
   const [showSupport, setShowSupport] = useState(false);
   const menuRef = useRef();
 
-  // Close mobile menu if clicked outside
   useEffect(() => {
     function handleClickOutside(e) {
       if (menuRef.current && !menuRef.current.contains(e.target)) {
@@ -150,8 +148,7 @@ export default function Navbar() {
             className="flex items-center gap-2 font-extrabold text-xl sm:text-2xl text-yellow-300 hover:scale-105 transition"
           >
             <TetherLogo className="h-8 w-8" />
-            {/* Reverted to original extra‑bold yellow */}
-            <span>Tether2</span>
+            <span>Tether2INR</span>
           </Link>
 
           {/* Desktop Nav */}
